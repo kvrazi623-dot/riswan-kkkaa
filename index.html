@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>എന്റെ റിസ്വാന് ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 85%;
+            max-width: 400px;
+            padding: 30px 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        .heart {
+            font-size: 75px;
+            animation: beat 1s infinite;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        button {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #ff4f81;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 19px;
+            line-height: 2;
+        }
+
+        .floating {
+            position: absolute;
+            bottom: -30px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes beat {
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="heart">❤️</div>
+
+        <h1>എന്റെ റിസ്വാൻ 🫶</h1>
+
+        <p>
+            ഈ ലോകത്ത് ഒരുപാട് ആളുകളുണ്ടെങ്കിലും,<br>
+            എന്റെ ഹൃദയത്തിൽ നിനക്കൊരു<br>
+            പ്രത്യേക സ്ഥാനമുണ്ട്. 💖<br><br>
+
+            നിന്റെ പുഞ്ചിരി എനിക്ക് സന്തോഷമാണ്,<br>
+            നിന്റെ സാന്നിധ്യം എനിക്ക് പ്രിയപ്പെട്ടതാണ്. ✨
+        </p>
+
+        <button onclick="showLove()">
+            ഒരു രഹസ്യം തുറക്കൂ 💌
+        </button>
+
+        <div id="message">
+            റിസ്വാനേ... ❤️🥹<br>
+            നീ എനിക്ക് ഒരുപാട് പ്രിയപ്പെട്ടവനാണ്!<br>
+            എന്നും സന്തോഷത്തോടെ ഇരിക്കണം. 💕<br>
+            നിനക്കായി ഒരു വലിയ ഹൃദയം നിറഞ്ഞ സ്നേഹം! 💗
+        </div>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "floating";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (15 + Math.random() * 25) + "px";
+            heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
